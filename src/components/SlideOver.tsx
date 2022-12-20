@@ -1,10 +1,12 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useContext } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import { orderContext } from './context/openOrder'
 
 
 export default function SlideOver(a:{open:boolean, click:any}) {
     // const [open, setOpen] = useState(a.open)
+    const {items} = useContext(orderContext)
 
   return (
     <Transition.Root show={a.open} as={Fragment}>
@@ -56,14 +58,30 @@ export default function SlideOver(a:{open:boolean, click:any}) {
                   </Transition.Child>
                   <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl font-serif">
                     <div className="px-4 sm:px-6">
-                      <Dialog.Title className="text-lg font-medium text-gray-900">Panel title</Dialog.Title>
+                      <Dialog.Title className="text-lg font-medium text-gray-900">Choosen Items</Dialog.Title>
                     </div>
                     <div className="relative mt-6 flex-1 px-4 sm:px-6">
                       {/* Replace with your content */}
                       <div className="absolute inset-0 px-4 sm:px-6">
                         
                         {/* <div className="h-full border-2 border-dashed border-gray-200" aria-hidden="true" /> */}
-                        here come the menu items choosen
+                       
+                       <ul className="">
+                          <li className=' container grid grid-cols-3'>
+                              <p className=''>Name</p>
+                              <p className=''>Price</p>
+                              <p className=''>Quantity</p>
+                          </li>
+                        {items.map((i,key)=> (
+                          <li 
+                          className='container grid grid-cols-3 border border-dark p-2 my-2' 
+                          key={key}>
+                            <p>{i.name}</p> 
+                            <p>{i.price}</p> 
+                            <p>{i.quantity}</p>
+                          </li>
+                        ))}
+                       </ul>
                       </div>
                       {/* /End replace */}
                     </div>
