@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
+
 import Menu from './components/menu';
-import Header from './components/header';
-import { orderContext, type } from './components/context/openOrder';
+import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
+import Home from './components/Home';
+import Test from './components/testing/test';
+import { orderContext } from './components/context/openOrder';
+import { itemType } from './menu-list';
+import { useState } from 'react';
 
 function App() {
-  const [items, setItems] = useState<type[] | []>([])
-  
+  const [items, setItems] = useState<itemType[] | []>([])
   return (
     <orderContext.Provider value={{items, setItems}}>
-      <div className='font-serif' >
-        <Header />
-        <div className='container mx-auto'>
-          <h1 className="text-3xl mt-3 text-center font-bold">
-            Menu </h1>
-          <Menu></Menu>
-        </div>
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/menu" element={<Menu/>} />
+          <Route path="/testing" element={<Test />} />
+        </Routes>
+      </Router>
     </orderContext.Provider>
   );
 }

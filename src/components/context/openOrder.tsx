@@ -1,16 +1,12 @@
 import { count } from "console";
 import { createContext}  from "react";
-export interface type{
-    name:string,
-    price:number,
-    quantity:number
-}
+import { itemType } from "../../menu-list";
 
 export const orderContext = createContext<{
-    items:type[];
+    items:itemType[];
     setItems: (value:any)=>void;
 }>({
     items:[],
-    setItems:()=>{} 
+    setItems:()=>{},
 });
  
