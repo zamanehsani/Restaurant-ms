@@ -1,13 +1,33 @@
-import { Fragment, useState, useContext } from 'react'
+import { Fragment, useContext } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
-import { orderContext } from './context/openOrder'
+import { XMarkIcon,ChevronDoubleUpIcon,ChevronDoubleDownIcon} from '@heroicons/react/24/outline'
+import { context } from './context/Context'
+import { itemType } from '../menu-list'
+
+const calTotal =(items:itemType[]):number=>{
+  let total  = 0;
+  items.map(itm=>{
+    total += (itm.price * itm.quantity)
+  })
+  // return total with two decimal places
+  return Math.round((total + Number.EPSILON) * 100) / 100
+}
 
 
 export default function SlideOver(a:{open:boolean, click:any}) {
-    // const [open, setOpen] = useState(a.open)
-    const {items} = useContext(orderContext)
+    const {items,dispatch} = useContext(context)
+    const total = calTotal(items)
 
+    const handleIncrement = (id:number)=>{
+      dispatch({ type: 'increment', payload: id });
+    }
+
+    const handleDecrement = (id:number)=>{
+        dispatch({ type: 'decrement', payload:id });
+    }
+    const handleRemove = (id:number)=>{
+        dispatch({ type: 'remove', payload: id });
+    }
   return (
     <Transition.Root show={a.open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={a.click}>
@@ -66,7 +86,7 @@ export default function SlideOver(a:{open:boolean, click:any}) {
                         
                         {/* <div className="h-full border-2 border-dashed border-gray-200" aria-hidden="true" /> */}
                        
-                       <ul className="">
+                       <ul className="h-[95%] p-2 overflow-y-auto border-2 mb-2 border-dashed border-gray-200">
                           <li className=' container grid grid-cols-3'>
                               <p className=''>Name</p>
                               <p className=''>Price</p>
@@ -78,10 +98,26 @@ export default function SlideOver(a:{open:boolean, click:any}) {
                           key={key}>
                             <p>{i.name}</p> 
                             <p>{i.price}</p> 
-                            <p>{i.quantity}</p>
+                            <div className="flex justify-center">
+                              <span onClick={()=>handleIncrement(i.id)}
+                              className="bg-blue-600 text-white font-bold p-2 pt-3"> 
+                                  <ChevronDoubleUpIcon className="h-4 w-4" />
+                              </span>
+                              <span className=" bg-white p-2 ">{i.quantity}</span>
+                              <span  onClick={()=>handleDecrement(i.id)}
+                              className="bg-red-600  text-white font-bold p-2  pt-3"> 
+                                  <ChevronDoubleDownIcon className="h-4 w-4 " />
+                              </span>
+                              <span className='bg-red-600 text-white ml-1 font-bold p-2 pt-3'>
+                                  <XMarkIcon onClick={()=>handleRemove(i.id)}
+                                  className="h-4 w-4 " />
+                              </span>
+                          </div>
                           </li>
                         ))}
                        </ul>
+                       <span className='font-bold'>Total: {total}</span>
+                       <button className='px-6 py-2 bg-blue-500 text-white float-right'>Next</button>
                       </div>
                       {/* /End replace */}
                     </div>

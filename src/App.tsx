@@ -2,23 +2,23 @@
 import Menu from './components/menu';
 import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 import Home from './components/Home';
-import Test from './components/testing/test';
-import { orderContext } from './components/context/openOrder';
-import { itemType } from './menu-list';
-import { useState } from 'react';
+import { context } from './components/context/Context';
+import { useReducer } from 'react';
+import {reducer} from './components/context/reducer'
+
+
 
 function App() {
-  const [items, setItems] = useState<itemType[] | []>([])
+  const [items, dispatch] = useReducer(reducer, []);
   return (
-    <orderContext.Provider value={{items, setItems}}>
+    <context.Provider value={{items, dispatch}}>
       <Router>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/menu" element={<Menu/>} />
-          <Route path="/testing" element={<Test />} />
         </Routes>
       </Router>
-    </orderContext.Provider>
+    </context.Provider>
   );
 }
 

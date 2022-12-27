@@ -1,40 +1,55 @@
-import {Arr, Button, Greeting, InChange, Inchnge, ObjArr, Objects} from './simpleProps'
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-const arrobj = [
-    {
-        id:1,
-        name:'ali',
-        comments: ['23','23','45']
-    },
-    {
-        id:2,
-        name:'jee',
-        comments: ['3','3','5']
-    },
-    {
-        id:3,
-        name:'zee',
-        comments: ['3','23d','sd']
-    },
-]
+type IDType ={
+    id:number,
+    firstName:string,
+    sureName: string
+}
 
-const Test:React.FC = () =>{
-    const [user, setUser] = useState("no name")
+const initialState:IDType = {
+    id:12,
+    firstName: "",
+    sureName: ""
+}
+
+
+const Test:React.FC = () => {
+    const [N, setID] = useState<IDType>(initialState)
+    
+    const submit = (e:React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+    }
+
+    const saveFirstName = (e:React.FormEvent<HTMLInputElement>)=>{
+        setID({...N,firstName:e.currentTarget.value})
+    }
+    const saveSurName = (e:React.FormEvent<HTMLInputElement>) =>{
+        setID({...N,sureName:e.currentTarget.value})
+    }
+
     return (
         <div className="container p-5 text-center">
-        < Greeting name="zaman" />
-        <Objects id={12} name="zmana" is_active={false}  />
-        <Arr  ar={[1,2,3,4]}/>
-        {/* <ObjArr obj = {arrobj} /> */}
-        
-        <Button handleClick={(event)=>{console.log(event.currentTarget.value)}}/>
-        <br />
-        <span>{user}</span>
-        <br />
-        <Inchnge handleChange={(event)=> setUser(event.target.value)}/>
+            <div className="container p-2 border-2 border-purple-500 rounded-xl">
+                <p className="text-7xl">ID: {N.id}</p>
+                <p className="text-7xl">Name: 
+                <span className="text-purple-500">{N.firstName}</span>
+                </p>
+                <p className="text-7xl">Surename: 
+                <span className="text-purple-500">{N.sureName}</span></p>
+            </div>
 
-           
+            <form className="m-3"
+            onSubmit={submit}
+            >
+            <input className="text-7xl" type="text" value={N.firstName}  onChange={saveFirstName}
+            placeholder="Your first name here"
+             /> 
+
+            <br className="my-5" />
+            <input className="text-7xl" type="text" value={N.sureName} onChange={saveSurName}
+            placeholder="Your sure name here"
+            />
+            </form>
         </div>
     )
 }

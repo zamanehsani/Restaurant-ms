@@ -1,14 +1,7 @@
-import React, { useState } from 'react';
-import Menu from './menu';
 import Header from './header';
-import { orderContext } from './context/openOrder';
-import { itemType } from '../menu-list';
 
-function Home() {
-  const [items, setItems] = useState<itemType[] | []>([])
-  
+function Home() {  
   return (
-    <orderContext.Provider value={{items, setItems}}>
       <div className='font-serif' >
         <Header />
         <div className='container mx-auto'>
@@ -17,7 +10,6 @@ function Home() {
           </h1>
         </div>
       </div>
-    </orderContext.Provider>
   );
 }
 

@@ -109,4 +109,184 @@ export const menuList:itemType[] = [
         discount:0
 
     },
+    {
+        id:7,
+        name: "coca cola",
+        details:"Hommus is well served with bread dandori bread.",
+        price : 14.5,
+        image: "https://media.istockphoto.com/id/1142603303/photo/grilled-meat-and-vegetables-on-skewers.jpg?s=612x612&w=is&k=20&c=ZvzrvBa7xeVxOQYU6BQoroFizrvsISxWhzNt1AwDWhc=",
+        category: 1,
+        quantity:0,
+        reviews:[],
+        discount:0
+
+    },
+    {
+        id:8,
+        name: "7 UP",
+        details:"Hommus is well served with bread dandori bread.",
+        price : 14.5,
+        image: "https://media.istockphoto.com/id/1142603303/photo/grilled-meat-and-vegetables-on-skewers.jpg?s=612x612&w=is&k=20&c=ZvzrvBa7xeVxOQYU6BQoroFizrvsISxWhzNt1AwDWhc=",
+        category: 1,
+        quantity:0,
+        reviews:[],
+        discount:0
+
+    },
+    {
+        id:9,
+        name: "Soup",
+        details:"Hommus is well served with bread dandori bread.",
+        price : 14.5,
+        image: "https://media.istockphoto.com/id/1142603303/photo/grilled-meat-and-vegetables-on-skewers.jpg?s=612x612&w=is&k=20&c=ZvzrvBa7xeVxOQYU6BQoroFizrvsISxWhzNt1AwDWhc=",
+        category: 2,
+        quantity:0,
+        reviews:[],
+        discount:0
+
+    },
+    {
+        id:10,
+        name: "Salad",
+        details:"Hommus is well served with bread dandori bread.",
+        price : 14.5,
+        image: "https://media.istockphoto.com/id/1142603303/photo/grilled-meat-and-vegetables-on-skewers.jpg?s=612x612&w=is&k=20&c=ZvzrvBa7xeVxOQYU6BQoroFizrvsISxWhzNt1AwDWhc=",
+        category: 3,
+        quantity:0,
+        reviews:[],
+        discount:0
+
+    },
+    {
+        id:11,
+        name: "Grill",
+        details:"Hommus is well served with bread dandori bread.",
+        price : 14.5,
+        image: "https://media.istockphoto.com/id/1142603303/photo/grilled-meat-and-vegetables-on-skewers.jpg?s=612x612&w=is&k=20&c=ZvzrvBa7xeVxOQYU6BQoroFizrvsISxWhzNt1AwDWhc=",
+        category: 3,
+        quantity:0,
+        reviews:[],
+        discount:0
+
+    },
+    {
+        id:12,
+        name: "Coffee",
+        details:"Hommus is well served with bread dandori bread.",
+        price : 14.5,
+        image: "https://media.istockphoto.com/id/1142603303/photo/grilled-meat-and-vegetables-on-skewers.jpg?s=612x612&w=is&k=20&c=ZvzrvBa7xeVxOQYU6BQoroFizrvsISxWhzNt1AwDWhc=",
+        category: 3,
+        quantity:0,
+        reviews:[],
+        discount:0
+
+    },
+    {
+        id:13,
+        name: "Green Tea",
+        details:"Hommus is well served with bread dandori bread.",
+        price : 14.5,
+        image: "https://media.istockphoto.com/id/1142603303/photo/grilled-meat-and-vegetables-on-skewers.jpg?s=612x612&w=is&k=20&c=ZvzrvBa7xeVxOQYU6BQoroFizrvsISxWhzNt1AwDWhc=",
+        category: 3,
+        quantity:0,
+        reviews:[],
+        discount:0
+
+    },
+    {
+        id:14,
+        name: "Cold Water",
+        details:"Hommus is well served with bread dandori bread.",
+        price : 14.5,
+        image: "https://media.istockphoto.com/id/1142603303/photo/grilled-meat-and-vegetables-on-skewers.jpg?s=612x612&w=is&k=20&c=ZvzrvBa7xeVxOQYU6BQoroFizrvsISxWhzNt1AwDWhc=",
+        category: 3,
+        quantity:0,
+        reviews:[],
+        discount:0
+
+    },
+    {
+        id:15,
+        name: "Seakh Kabab",
+        details:"Hommus is well served with bread dandori bread.",
+        price : 14.5,
+        image: "https://media.istockphoto.com/id/1142603303/photo/grilled-meat-and-vegetables-on-skewers.jpg?s=612x612&w=is&k=20&c=ZvzrvBa7xeVxOQYU6BQoroFizrvsISxWhzNt1AwDWhc=",
+        category: 4,
+        quantity:0,
+        reviews:[],
+        discount:0
+
+    },
+    {
+        id:16,
+        name: "Tikka Kabab",
+        details:"Hommus is well served with bread dandori bread.",
+        price : 14.5,
+        image: "https://media.istockphoto.com/id/1142603303/photo/grilled-meat-and-vegetables-on-skewers.jpg?s=612x612&w=is&k=20&c=ZvzrvBa7xeVxOQYU6BQoroFizrvsISxWhzNt1AwDWhc=",
+        category: 4,
+        quantity:0,
+        reviews:[],
+        discount:0
+
+    },
+    {
+        id:17,
+        name: "Pulow",
+        details:"Hommus is well served with bread dandori bread.",
+        price : 14.5,
+        image: "https://media.istockphoto.com/id/1142603303/photo/grilled-meat-and-vegetables-on-skewers.jpg?s=612x612&w=is&k=20&c=ZvzrvBa7xeVxOQYU6BQoroFizrvsISxWhzNt1AwDWhc=",
+        category: 4,
+        quantity:0,
+        reviews:[],
+        discount:0
+
+    },
+    {
+        id:18,
+        name: "White Rice",
+        details:"Hommus is well served with bread dandori bread.",
+        price : 14.5,
+        image: "https://media.istockphoto.com/id/1142603303/photo/grilled-meat-and-vegetables-on-skewers.jpg?s=612x612&w=is&k=20&c=ZvzrvBa7xeVxOQYU6BQoroFizrvsISxWhzNt1AwDWhc=",
+        category: 5,
+        quantity:0,
+        reviews:[],
+        discount:0
+
+    },
+    {
+        id:19,
+        name: "Gigaja",
+        details:"Hommus is well served with bread dandori bread.",
+        price : 14.5,
+        image: "https://media.istockphoto.com/id/1142603303/photo/grilled-meat-and-vegetables-on-skewers.jpg?s=612x612&w=is&k=20&c=ZvzrvBa7xeVxOQYU6BQoroFizrvsISxWhzNt1AwDWhc=",
+        category: 5,
+        quantity:0,
+        reviews:[],
+        discount:0
+
+    },
+    {
+        id:20,
+        name: "Laban",
+        details:"Hommus is well served with bread dandori bread.",
+        price : 14.5,
+        image: "https://media.istockphoto.com/id/1142603303/photo/grilled-meat-and-vegetables-on-skewers.jpg?s=612x612&w=is&k=20&c=ZvzrvBa7xeVxOQYU6BQoroFizrvsISxWhzNt1AwDWhc=",
+        category: 5,
+        quantity:0,
+        reviews:[],
+        discount:0
+
+    },
+    {
+        id:21,
+        name: "Watermelon",
+        details:"Hommus is well served with bread dandori bread.",
+        price : 14.5,
+        image: "https://media.istockphoto.com/id/1142603303/photo/grilled-meat-and-vegetables-on-skewers.jpg?s=612x612&w=is&k=20&c=ZvzrvBa7xeVxOQYU6BQoroFizrvsISxWhzNt1AwDWhc=",
+        category: 5,
+        quantity:0,
+        reviews:[],
+        discount:0
+
+    },
 ]
